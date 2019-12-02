@@ -211,7 +211,7 @@ function decrementCount(){
 
 //Timer variables
 var timeleft = 25;
-var countdown = setInterval(x,1000);
+var countdown = setInterval(0,1000);
 
 
 function countDownTimer(){
@@ -326,7 +326,7 @@ function selectGame4(){
     gameOverAudio();
  }
 
-
+/*
 
  var headyVerb = [["say","said", "dīc" + pE3[pEIndex], "dīx" + pT[pEIndex]],["think","thought", "put" + pE1[pEIndex], "putav" + pT[pEIndex]], ["see","saw", "vid" + pE2[pEIndex], "vīd" + pT[pEIndex]], ["feel","felt", "sent" + pE4[pEIndex], "sens" + pT[pEIndex]],["hear","heard", "aud" + pE4[pEIndex], "audiv" + pT[pEIndex]],["know","knew", "sc" + pE4[pEIndex], "scīv" + pT[pEIndex]]];
 
@@ -359,27 +359,26 @@ var verbInfIndex = Math.floor(Math.random() * verbInfinitive.length);
 
 //var tenseIndex = ["0","1", "2", "3","4"]
 var tenseIndex = Math.floor(Math.random() * 5);
+*/
+
+var sentence = "";
+var correctAnswer = "";
+var wrongAnswer1 = "";
+var wrongAnswer2 = "";
+var wrongAnswer3 = "";
 
 
- var sentence = headyVerb[hVIndex][2] + " " + subjectAccusativeMas[sAMasIndex][0] + " " + verbInfinitive[verbInfIndex][tenseIndex + 5];
- var correctAnswer = pronounHe[pEIndex] + " " + headyVerb[hVIndex][0] + " that " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEng[verbInfIndex][tenseIndex];
- var wrongAnswer1 = pronounHe[pEIndex] + " " + headyVerb[hVIndex][0] + " WR1 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEng[verbInfIndex][tenseIndex + 1];
- var wrongAnswer2 = pronounHe[pEIndex] + " " + headyVerb[hVIndex][0] + " WR2 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEng[verbInfIndex][tenseIndex + 2];
- var wrongAnswer3 = pronounHe[pEIndex] + " " + headyVerb[hVIndex][0] + " WR3 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEng[verbInfIndex][tenseIndex + 3];
-
-
- var sentencePast = headyVerb[hVIndex][3] + " " + subjectAccusativeMas[sAMasIndex][0] + " " + verbInfinitivePast[verbInfIndex][tenseIndex + 5];
- var correctAnswerPast = pronounShe[pEIndex] + " " + headyVerb[hVIndex][1] + " that " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEngPast[verbInfIndex][tenseIndex];
- var wrongAnswer1Past = pronounShe[pEIndex] + " " + headyVerb[hVIndex][1] + " WR1 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEngPast[verbInfIndex][tenseIndex + 1];
- var wrongAnswer2Past = pronounShe[pEIndex] + " " + headyVerb[hVIndex][1] + " WR2 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEngPast[verbInfIndex][tenseIndex + 2];
- var wrongAnswer3Past = pronounShe[pEIndex] + " " + headyVerb[hVIndex][1] + " WR3 " + subjectAccusativeMas[sAMasIndex][1] + " " + verbInfinitiveEngPast[verbInfIndex][tenseIndex + 3];
-
+var sentencePast = "";
+var correctAnswerPast = "";
+var wrongAnswer1Past = "";
+var wrongAnswer2Past = "";
+var wrongAnswer3Past = "";
 
 var  checkAnswers = [[correctAnswer,true],[wrongAnswer1,false],[wrongAnswer2,false],[wrongAnswer3,false]];
 
 
 
-
+/*
 
 var nounArray123 = [["puell", "girl"], ["regin", "queen"],["pugn", "fight"],["fili", "daughter"],["amic", "girl friend"],["agricol", "farmer"], ["poet", "poet"], ["ancill", "maid servant"], ["naut", "sailor"]];
 
@@ -398,6 +397,9 @@ verb132 = newVerb132.verbForm;
 var verbTenseArray = [pres3rdSing, per3rdSing, imp3rdSing, fut3rdSing];
 
 
+*/
+
+
 
 
 
@@ -408,6 +410,9 @@ var verbTenseArray = [pres3rdSing, per3rdSing, imp3rdSing, fut3rdSing];
 
 
   function testIndirectStatement(){
+
+
+
 
     class Verb{
      constructor(verbStem){
@@ -420,7 +425,8 @@ var verbTenseArray = [pres3rdSing, per3rdSing, imp3rdSing, fut3rdSing];
 
 
     var randomVerbIndex = Math.floor(Math.random() * verbArray.length);
-    newVerb = new Verb(verbArray[randomVerbIndex][3]);
+    //var newVerb = "";
+    const newVerb = new Verb(verbArray[randomVerbIndex][3]);
     verbPresSing = newVerb.verbForm + pres3rdSing;
 
     verbPerSing = newVerb.verbForm + per3rdSing;
@@ -435,7 +441,8 @@ var verbTenseArray = [pres3rdSing, per3rdSing, imp3rdSing, fut3rdSing];
     var verbArrayPlural = [["love","loved", "used to love", "am"],["praise","praised", "were praising", "laud"], ["carry","carried", "were carrying", "port"],["greet","greeted", "were greeting", "salut"],["kill","killed", "were killing", "nec"],["are fighting", "fought", "used to fight", "pugn"], ["save","saved", "kept saving", "serv"], ["look at", "looked at", "were looking at",  "spect"], ["are calling","called", "were calling", "voc"], ["annoy","annoyed", "were annoying", "vex"], ["wound","wounded", "were wounding", "vulner"], ["beat","beat", "were beating", "verber"], ["scold","scolded", "used to scold", "vituper"], ["strike","struck", "kept striking", "puls"], ["free","freed", "were freeing", "liber"], ["wait for","waited for", "were waiting for", "exspect"], ["avoid","avoided", "were avoiding", "vit"], ["hide","hid", "used to hide", "cel"]];
 
 var randomVerbPluralIndex = Math.floor(Math.random() * verbArrayPlural.length);
-newVerbPlural = new Verb(verbArrayPlural[randomVerbIndex][3]);
+//var newVerbPlural = "";
+const newVerbPlural = new Verb(verbArrayPlural[randomVerbIndex][3]);
 verbPresPl = newVerbPlural.verbForm + pres3rdPl;
 
 verbPerPl = newVerbPlural.verbForm + per3rdPl;
@@ -461,25 +468,58 @@ verbImpPl = newVerbPlural.verbForm + imp3rdPl;
     var randomNounIndex = Math.floor(Math.random() * nounArray.length);
     var randomNoun2Index = Math.floor(Math.random() * nounArray2.length);
     var randomNoun3Index = Math.floor(Math.random() * nounArray3.length);
+/*
+    function test(t) {      //defining a function
+      if (t === undefined) {       //if t=undefined, call tt
+            console.log(t)      //call t
+      }
+      return t;
+    }
+*/
+//var newNoun = "";
+
+var randomObjectIndex = Math.floor(Math.random() * nounArray.length);
+var randomObject2Index = Math.floor(Math.random() * nounArray2.length);
+var randomObject3Index = Math.floor(Math.random() * nounArray3.length);
 
 
 
-    newNoun = new Subject(nounArray[randomNounIndex][0]);
+    const newNoun = new Subject(nounArray[randomNounIndex][0]);
+const newNoun2 = new Subject(nounArray2[randomNoun2Index][0]);
+const newNoun2NomPl = new Subject(nounArray2[randomNoun2Index][1]);
+const newNoun3 = new Subject(nounArray3[randomNoun3Index][0]);
+const newNoun3NomPl = new Subject(nounArray3[randomNoun3Index][1]);
+const newObject = new Subject(nounArray[randomObjectIndex][0]);
+const newObject2 = new Subject(nounArray2[randomObject2Index][1]);
+const  newObject3 = new Subject(nounArray3[randomObject3Index][1]);
+
+
+
     subjectSing = newNoun.nounForm + nomPE1;
     subjectPl = newNoun.nounForm + nomPE1Pl;
 
 
     //subjectSing2 = newNoun2.nounForm;
-    newNoun2 = new Subject(nounArray2[randomNoun2Index][0]);
+    //var newNoun2 = "";
+
+
     subjectSing2 = newNoun2.nounForm;
-    newNoun2NomPl = new Subject(nounArray2[randomNoun2Index][1]);
+
+
+//var newNoun2NomPl = "";
+
     subjectPl2 = newNoun2NomPl.nounForm + nomPE2Pl;
 
 
-    newNoun3 = new Subject(nounArray3[randomNoun3Index][0]);
+//var newNoun3 = "";
+
     subjectSing3 = newNoun3.nounForm;
-    newNoun3NomPl = new Subject(nounArray3[randomNoun3Index][1]);
-    subjectPl3 = newNoun3NomPl.nounForm + nomPE3Pl;
+
+//var newNoun3NomPl = "";
+
+
+subjectPl3 = newNoun3NomPl.nounForm + nomPE3Pl;
+
 /*
     newLatSubj = new Subject (nounArray[randomNounIndex][1]);
     singSubjectEng = newLatSubj.nounForm;
@@ -487,9 +527,10 @@ verbImpPl = newVerbPlural.verbForm + imp3rdPl;
     plSubjectEng = newLatSubjPl.nounForm;
 */
 
-var randomObjectIndex = Math.floor(Math.random() * nounArray.length);
 
-    newObject = new Subject(nounArray[randomObjectIndex][0]);
+//var newObject = "";
+
+
     objectSing = newObject.nounForm + accPE1;
     objectPl = newObject.nounForm + accPE1Pl;
 
@@ -497,14 +538,17 @@ var randomObjectIndex = Math.floor(Math.random() * nounArray.length);
 
 
 
-var randomObject2Index = Math.floor(Math.random() * nounArray2.length);
-    newObject2 = new Subject(nounArray2[randomObject2Index][1]);
+
+//var newObject2 = "";
+
 
     objectSing2 = newObject2.nounForm + accPE2;
     objectPl2 = newObject2.nounForm + accPE2Pl;
 
-    var randomObject3Index = Math.floor(Math.random() * nounArray3.length);
-        newObject3 = new Subject(nounArray3[randomObject3Index][1]);
+
+    //var newObject3 = "";
+
+
         objectSing3 = newObject3.nounForm + accPE3;
         objectPl3 = newObject3.nounForm + accPE3Pl;
 
@@ -514,9 +558,17 @@ var randomObject2Index = Math.floor(Math.random() * nounArray2.length);
 
         var randomPAPIndex = Math.floor(Math.random() * presActPart.length);
 
-        newPAP = new Subject(presActPart[randomPAPIndex][0]);
+        const   newPAP = new Subject(presActPart[randomPAPIndex][0]);
+        
+        const stemPAP = new Subject(presActPart[randomPAPIndex][1]);
+
+
+
         nomPAP = newPAP.nounForm;
-      stemPAP = new Subject(presActPart[randomPAPIndex][1]);
+
+//var ste = "";
+
+
         dirObjSingPAP = stemPAP.nounForm + accPE3;
         nomAccPluralPAP = stemPAP.nounForm + nomPE3Pl;
 
@@ -721,10 +773,54 @@ else if (ranISIndex == 3) {
     //checkAnswers = [[correctAnswer,true],[wrongAnswer1,false],[wrongAnswer2,false],[wrongAnswer3,false]];
 
 
+/*
+
+function resetUndefinedValues(){
 
 
+      var a = new Subject(nounArray[randomNounIndex][0]);    //a is a variable with undefined value
 
+      console.log(test(a)); //function call
 
+      var b = new Subject(nounArray2[randomNoun2Index][0]);    //a is a variable with undefined value
+
+      console.log(test(b)); //function call
+
+      var c = new Subject(nounArray2[randomNoun2Index][1]);    //a is a variable with undefined value
+
+      console.log(test(c)); //function call
+
+      var d = new Subject(nounArray3[randomNoun3Index][0]);    //a is a variable with undefined value
+
+      console.log(test(d)); //function call
+
+      var e = new Subject(nounArray3[randomNoun3Index][1]);    //a is a variable with undefined value
+
+      console.log(test(e)); //function call
+
+      var f = new Subject(nounArray[randomObjectIndex][0]);    //a is a variable with undefined value
+
+      console.log(test(f)); //function call
+
+      var g = new Subject(nounArray2[randomObject2Index][1]);    //a is a variable with undefined value
+
+      console.log(test(g)); //function call
+
+      var h = new Subject(nounArray3[randomObject3Index][1]);    //a is a variable with undefined value
+
+      console.log(test(h)); //function call
+
+      var i = new Subject(presActPart[randomPAPIndex][0]);    //a is a variable with undefined value
+
+      console.log(test(i)); //function call
+
+      var j = new Subject(presActPart[randomPAPIndex][1]);    //a is a variable with undefined value
+
+      console.log(test(j)); //function call
+
+}
+
+*/
   startButton.innerHTML = sentence;
 
   document.getElementById(answers[0]).innerHTML = checkAnswers[0][0];
@@ -734,6 +830,49 @@ else if (ranISIndex == 3) {
   document.getElementById(answers[2]).innerHTML =  checkAnswers[2][0];
 
   document.getElementById(answers[3]).innerHTML = checkAnswers[3][0];
+
+/*
+  var a = new Subject(nounArray[randomNounIndex][0]);    //a is a variable with undefined value
+
+  console.log(test(a)); //function call
+
+  var b = new Subject(nounArray2[randomNoun2Index][0]);    //a is a variable with undefined value
+
+  console.log(test(b)); //function call
+
+  var c = new Subject(nounArray2[randomNoun2Index][1]);    //a is a variable with undefined value
+
+  console.log(test(c)); //function call
+
+  var d = new Subject(nounArray3[randomNoun3Index][0]);    //a is a variable with undefined value
+
+  console.log(test(d)); //function call
+
+  var e = new Subject(nounArray3[randomNoun3Index][1]);    //a is a variable with undefined value
+
+  console.log(test(e)); //function call
+
+  var f = new Subject(nounArray[randomObjectIndex][0]);    //a is a variable with undefined value
+
+  console.log(test(f)); //function call
+
+  var g = new Subject(nounArray2[randomObject2Index][1]);    //a is a variable with undefined value
+
+  console.log(test(g)); //function call
+
+  var h = new Subject(nounArray3[randomObject3Index][1]);    //a is a variable with undefined value
+
+  console.log(test(h)); //function call
+
+  var i = new Subject(presActPart[randomPAPIndex][0]);    //a is a variable with undefined value
+
+  console.log(test(i)); //function call
+
+  var j = new Subject(presActPart[randomPAPIndex][1]);    //a is a variable with undefined value
+
+  console.log(test(j)); //function call
+
+*/
 
 
 
@@ -780,7 +919,7 @@ else if (ranISIndex == 3) {
 
          }
 
-
+//resetUndefinedValues();
 
 
     }
@@ -876,7 +1015,7 @@ function clickedAnswerOne(){
 		startButton.disabled = false;
 
 
-		unHideResponseNext();
+		//unHideResponseNext();
 
 
 
@@ -942,7 +1081,7 @@ function clickedAnswerTwo(){
 		startButton.disabled = false;
 
 
-		unHideResponseNext();
+	//	unHideResponseNext();
 
 
 
@@ -1006,7 +1145,7 @@ function clickedAnswerThree(){
 		startButton.disabled = false;
 
 
-		unHideResponseNext();
+		//unHideResponseNext();
 
 
 
@@ -1077,7 +1216,7 @@ function clickedAnswerFour(){
 		startButton.disabled = false;
 
 
-		unHideResponseNext();
+		//unHideResponseNext();
 
 
 
